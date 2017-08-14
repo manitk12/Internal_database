@@ -39,18 +39,16 @@ public class MainActivity extends AppCompatActivity {
                 String file_name = editText_File_Name.getText().toString();
                 String data = editText_Text_data.getText().toString();
 
-                FileOutputStream fileOutputStream,fileOutputStream1;
+                FileOutputStream fileOutputStream;
 
                 try{
 
                     fileOutputStream = openFileOutput(file_name, Context.MODE_PRIVATE);
-                    fileOutputStream1 = openFileOutput(data, Context.MODE_PRIVATE);
                     fileOutputStream.write(file_name.getBytes());
-                    fileOutputStream1.write(data.getBytes());
+                    fileOutputStream.write(data.getBytes());
                     fileOutputStream.close();
 
                     Toast.makeText(getApplicationContext(),file_name+ "saved", Toast.LENGTH_SHORT).show();
-                    
 
                 }
                 catch (Exception e)
@@ -76,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 String data = editText_Text_data.getText().toString();
 
                 StringBuffer stringBuffer = new StringBuffer();
-                StringBuffer stringBuffer1 = new StringBuffer();
 
 
                 try{
@@ -95,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     while ((input_String = bufferedReader1.readLine())!= null){
-                        stringBuffer1.append(input_String+"\n");
+
 
 
                     }
@@ -112,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                 Toast.makeText(getApplicationContext(), stringBuffer.toString(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(), stringBuffer1.toString(), Toast.LENGTH_SHORT).show();
-
 
 
             }

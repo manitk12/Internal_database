@@ -79,6 +79,7 @@ public class Main4Activity extends AppCompatActivity {
 
 
 
+
         pieChart1.setHoleColor(ContextCompat.getColor(context.getContext(),R.color.grey_color));
         pieChart2.setDrawHoleEnabled(true);
         pieChart2.setHoleColor(ContextCompat.getColor(context.getContext(),R.color.grey_color));
@@ -131,9 +132,9 @@ public class Main4Activity extends AppCompatActivity {
 
 
 
-        Memory = new BigDecimal(Memory).setScale(DECIMAL_SCALE, BigDecimal.ROUND_FLOOR).floatValue();
-        memort_1 = new BigDecimal(memort_1).setScale(DECIMAL_SCALE, BigDecimal.ROUND_FLOOR).floatValue();
-        memory_3 = new BigDecimal(memory_3).setScale(DECIMAL_SCALE, BigDecimal.ROUND_FLOOR).floatValue();
+        Memory = new BigDecimal(Memory).setScale(DECIMAL_SCALE).floatValue();
+        memort_1 = new BigDecimal(memort_1).setScale(DECIMAL_SCALE).floatValue();
+        memory_3 = new BigDecimal(memory_3).setScale(DECIMAL_SCALE).floatValue();
 
 
         used = 100.0f - Memory ;
@@ -186,40 +187,25 @@ public class Main4Activity extends AppCompatActivity {
 
 
 
-        // Pass the ArrayList to make the DataSet
+
         dataSet = new PieDataSet(entries, "");
         dataSet1 = new PieDataSet(entries_1,"");
         dataSet2 = new PieDataSet(entries_2,"");
 
 
-        // Dunno But below method cannot be resolved in this project
-        // Though it works fine in ExampleChart app
-        //dataSet.setDrawIcons(false);
-
-        // Sets the distance between 2 pies
-       // dataSet.setSliceSpace(3f);
-        dataSet1.setSliceSpace(3f);
-        dataSet2.setSliceSpace(3f);
-
-        // Another unresolvable method
-        //dataSet.setIconsOffset(new MPPointF(0, 40));
-
-     //   dataSet.setSelectionShift(5f);
-        dataSet1.setSelectionShift(5f);
-        dataSet2.setSelectionShift(5f);
 
 
 
-        // Supply the color list to be used for the pies
-        // The sequence matters
+
+
         if(used == 0f){
 
 
             if(Memory == 0f){
-               dataSet.setColors(ContextCompat.getColor(context.getContext(), R.color.orange));
+
             }else{
 
-               dataSet.setColors(ContextCompat.getColor(context.getContext(), R.color.orange));
+
             }
 
         }else if(Memory == 0f){
@@ -234,11 +220,9 @@ public class Main4Activity extends AppCompatActivity {
 
 
         PieData data = new PieData(dataSet);
-
         data.setValueFormatter(new PercentFormatter());
-
         data.setValueTextSize(0f);
-        //data.setValueTextColor(ContextCompat.getColor(context.getContext(),R.color.blue));
+
 
 
 
