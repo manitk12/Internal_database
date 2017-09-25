@@ -1,8 +1,18 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".Main2Activity" >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
 
     <EditText
         android:id="@+id/editText1"
@@ -14,7 +24,6 @@
         android:layout_marginTop="24dp"
         android:ems="10" >
 
-        <requestFocus />
     </EditText>
 
     <EditText
@@ -24,7 +33,13 @@
         android:layout_alignRight="@+id/editText1"
         android:layout_below="@+id/editText1"
         android:layout_marginTop="24dp"
-        android:ems="10" />
+        android:ems="10"
+
+        >
+
+
+
+       </EditText>
 
     <TextView
         android:id="@+id/textView1"
@@ -52,7 +67,7 @@
         android:layout_marginTop="18dp"
         android:text="save"
         android:layout_below="@+id/editText2"
-        android:layout_centerHorizontal="true" />
+        />
 
     <Button
         android:id="@+id/button2"
@@ -63,4 +78,50 @@
         android:layout_toRightOf="@+id/button1"
         android:text="read" />
 
-</RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+
+        android:weightSum="5">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:background="@color/blue"
+            android:layout_height="40dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@color/green"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@color/orange"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+
